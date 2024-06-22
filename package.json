@@ -1,8 +1,27 @@
 {
   "name": "vue-twind",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
+  "author": {
+    "name": "Aarón Montes"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajomuch92/vue-twind.git"
+  },
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-twind.umd.cjs",
+  "module": "./dist/vue-twind.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-twind.js",
+      "require": "./dist/vue-twind.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

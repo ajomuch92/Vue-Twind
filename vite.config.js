@@ -5,6 +5,9 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  server: {
+    port: 5171
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.js'),
@@ -12,10 +15,11 @@ export default defineConfig({
       fileName: (format) => `vue-twind.${format}.js`
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'twind'],
       output: {
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          twind: 'twind'
         }
       }
     }
